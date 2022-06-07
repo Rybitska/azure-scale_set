@@ -6,7 +6,7 @@ resource "random_id" "server" {
   byte_length = 8
 }
 
-resource "azurerm_resource_group" "tarraform_1" {
+resource "azurerm_resource_group" "terraform_1" {
   name     = "trafficmanagerendpointTest"
   location = "West US"
 }
