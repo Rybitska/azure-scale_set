@@ -6,14 +6,10 @@ resource "random_id" "server" {
   byte_length = 8
 }
 
-resource "azurerm_resource_group" "terraform_1" {
-  name     = "trafficmanagerendpointTest"
-  location = "West US"
-}
 
 resource "azurerm_traffic_manager_profile" "traffic_manager" {
   name                = random_id.server.hex
-  resource_group_name = azurerm_resource_group.terraform_1.name
+  resource_group_name = azurerm_resource_group.terraform1.name
 
   traffic_routing_method = "Weighted"
 
@@ -23,7 +19,7 @@ resource "azurerm_traffic_manager_profile" "traffic_manager" {
   }
 
   monitor_config {
-    protocol                     = "http"
+    protocol                     = "HTTP"
     port                         = 80
     path                         = "/"
     interval_in_seconds          = 30
@@ -35,7 +31,7 @@ resource "azurerm_traffic_manager_profile" "traffic_manager" {
 
 resource "azurerm_traffic_manager_endpoint" "example" {
   name                = random_id.server.hex
-  resource_group_name = azurerm_resource_group.terraform_1.name
+  resource_group_name = azurerm_resource_group.terraform1.name
   profile_name        = azurerm_traffic_manager_profile.example.name
   target              = "terraform.io"
   type                = "externalEndpoints"
