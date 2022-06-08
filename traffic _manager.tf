@@ -29,11 +29,11 @@ resource "azurerm_traffic_manager_profile" "traffic_manager" {
 
 }
 
-resource "azurerm_traffic_manager_endpoint" "example" {
-  name                = random_id.server.hex
-  resource_group_name = azurerm_resource_group.terraform1.name
-  profile_name        = azurerm_traffic_manager_profile.example.name
-  target              = "terraform.io"
-  type                = "externalEndpoints"
-  weight              = 100
-}
+#resource "azurerm_traffic_manager_endpoint" "example" {
+  #name                = random_id.server.hex
+  #resource_group_name = azurerm_resource_group.terraform1.name
+  #profile_name        = azurerm_traffic_manager_profile.example.name
+  #target              = "terraform.io"
+  #type                = "externalEndpoints"
+  #weight              = 100
+#}
