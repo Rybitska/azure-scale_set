@@ -27,7 +27,7 @@ resource "azurerm_linux_virtual_machine_scale_set" "ss" {
   name                = var.ss_name
   resource_group_name = azurerm_resource_group.terraform1.name
   location            = azurerm_resource_group.terraform1.location
-  sku                 = var.vm_sku
+  size                 = var.vm_sku
   instances           = var.instance_number
   admin_username      = var.admin_user_name
 
