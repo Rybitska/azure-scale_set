@@ -53,7 +53,7 @@ resource "azurerm_linux_virtual_machine_scale_set" "ss" {
     primary = true
 
     ip_configuration {
-      name      = "subnet1"
+      name      = var.subnet1_name
       primary   = true
       subnet_id = azurerm_subnet.subnet1.id
     }
