@@ -8,7 +8,7 @@ resource "azurerm_resource_group" "terraform1" {
 }
 
 
-resource "azurerm_virtual_network" "terraform1" {
+resource "azurerm_virtual_network" "terraform_vnet" {
   name                = var.vnet_name
   resource_group_name = azurerm_resource_group.terraform1.name
   location            = azurerm_resource_group.terraform1.location
@@ -17,29 +17,29 @@ resource "azurerm_virtual_network" "terraform1" {
 }
 
 resource "azurerm_subnet" "subnet1" {
-  name                 = "subnet1"
+  name                 = var.subnet1_name
   resource_group_name  = azurerm_resource_group.terraform1.name
-  virtual_network_name = azurerm_virtual_network.terraform1.name
-  address_prefixes     = ["10.0.1.0/24"]
+  virtual_network_name = azurerm_virtual_network.terraform_vnet.name
+  address_prefixes     = var.subnet1_ip
 }
 
 resource "azurerm_linux_virtual_machine_scale_set" "ss" {
-  name                = "ss-vmss"
+  name                = var.ss_name
   resource_group_name = azurerm_resource_group.terraform1.name
   location            = azurerm_resource_group.terraform1.location
-  sku                 = "Standard_F2"
-  instances           = 1
-  admin_username      = "adminuser"
+  sku                 = var.SKU_value
+  instances           = var.instance_number
+  admin_username      = var.admin_user_name
 
   admin_ssh_key {
-    username   = "adminuser"
+    username   = var.admin_user_name
     public_key = file("~/.ssh/id_rsa.pub")
   }
 
   source_image_reference {
     publisher = "Canonical"
     offer     = "UbuntuServer"
-    sku       = "16.04-LTS"
+    sku       = "18.04-LTS"
     version   = "latest"
   }
 
