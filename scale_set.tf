@@ -44,7 +44,7 @@ resource "azurerm_linux_virtual_machine_scale_set" "ss" {
   }
 
   os_disk {
-    storage_account_type = "Standard_LRS"
+    storage_account_type = var.Standard_LRS_name
     caching              = "ReadWrite"
   }
 
