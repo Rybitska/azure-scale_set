@@ -3,16 +3,17 @@ provider "azurerm" {
 }
 
 resource "azurerm_resource_group" "terraform1" {
-  name     = "tarraform1"
-  location = "West US"
+  name     = var.rg_name
+  location = var.rg_region
 }
-#######
+
+
 resource "azurerm_virtual_network" "terraform1" {
-  name                = "terraform1"
+  name                = var.vnet_name
   resource_group_name = azurerm_resource_group.terraform1.name
   location            = azurerm_resource_group.terraform1.location
-  address_space       = ["10.0.0.0/16"]
-  dns_servers         = ["10.0.0.4", "10.0.0.5"]
+  address_space       = var.vnet_ip
+ # dns_servers         = ["10.0.0.4", "10.0.0.5"]
 }
 
 resource "azurerm_subnet" "subnet1" {
