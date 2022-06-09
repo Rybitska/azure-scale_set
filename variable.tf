@@ -45,7 +45,7 @@ variable "ss_name" {
 variable "vm_sku" {
   description = "Virtual Machine SKU"
   type        = string
-  default     = "Standard_F2"
+  default     = "Standard_D2s_v3"
 }
 
 variable "instance_number" {

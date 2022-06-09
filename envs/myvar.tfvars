@@ -9,6 +9,6 @@ vm_sku            = "Standard_D2s_v3"
 instance_number   = 1
 admin_user_name   = "adminuser"
 canonical_name    = "canonical"
-UbuntuServer_name = "Ubuntu Server"
+UbuntuServer_name = "UbuntuServer"
 image_sku_name    = "20.04-LTS"
 Standard_LRS_name = "Standard_LRS"
