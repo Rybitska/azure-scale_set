@@ -76,3 +76,9 @@ variable "image_sku_name" {
   type        = string
   default     = "image_sku"
 }
+
+variable "Standard_LRS_name" {
+  description = "Standard_LRS name"
+  type        = string
+  default     = "Standard_LRS"
+}

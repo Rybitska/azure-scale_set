@@ -8,3 +8,4 @@ ss_name = "my_ss01"
 SKU_value = "Standard_F2"
 instance_number = 1
 admin_user_name = "adminuser"
+Standard_LRS_name = "Standard_LRS"
