@@ -42,8 +42,8 @@ variable "ss_name" {
 
 
 
-variable "SKU_value" {
-  description = "SKU"
+variable "vm_sku" {
+  description = "Virtual Machine SKU"
   type        = string
   default     = "Standard_F2"
 }
@@ -67,14 +67,14 @@ variable "canonical_name" {
 }
 
 variable "UbuntuServer_name" {
-  description = "UbuntuServer user name"
+  description = "Server type"
   type        = string
   default     = "UbuntuServer"
 }
 variable "image_sku_name" {
   description = "image_sku name"
   type        = string
-  default     = "image_sku"
+  default     = "20.04-LTS"
 }
 
 variable "Standard_LRS_name" {
