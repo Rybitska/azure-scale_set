@@ -1,4 +1,4 @@
-
+/*
 resource "random_id" "server" {
   keepers = {
     azi_id = 1
