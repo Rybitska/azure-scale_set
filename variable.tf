@@ -31,8 +31,8 @@ variable "subnet1_name" {
 
 variable "subnet1_ip" {
   description = "Subnet 1  Ip"
-  type        = string
-  default     = "10.0.1.0/24"
+  type        = list(any)
+  default     = ["10.0.1.0/24"]
 }
 variable "ss_name" {
   description = "ss name"
