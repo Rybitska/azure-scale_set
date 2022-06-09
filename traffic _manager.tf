@@ -1,4 +1,4 @@
-/*
+
 resource "random_id" "server" {
   keepers = {
     azi_id = 1
@@ -38,6 +38,3 @@ resource "azurerm_traffic_manager_profile" "traffic_manager" {
 #type                = "externalEndpoints"
 #weight              = 100
 #}
-
-
-*/
