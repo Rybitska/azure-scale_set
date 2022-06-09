@@ -37,9 +37,9 @@ resource "azurerm_linux_virtual_machine_scale_set" "ss" {
   }
 
   source_image_reference {
-    publisher = "Canonical"
-    offer     = "UbuntuServer"
-    sku       = "18.04-LTS"
+    publisher = var.canonical_name
+    offer     = var.UbuntuServer_name
+    sku       = var.image_sku_name
     version   = "latest"
   }
 

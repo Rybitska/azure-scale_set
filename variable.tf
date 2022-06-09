@@ -59,3 +59,20 @@ variable "admin_user_name" {
   type        = string
   default     = "adminuser"
 }
+
+variable "canonical_name" {
+  description = "canonical user name"
+  type        = string
+  default     = "canonical"
+}
+
+variable "UbuntuServer_name" {
+  description = "UbuntuServer user name"
+  type        = string
+  default     = "UbuntuServer"
+}
+variable "image_sku_name" {
+  description = "image_sku name"
+  type        = string
+  default     = "image_sku"
+}
