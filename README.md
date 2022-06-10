@@ -1,5 +1,3 @@
-# azure-scale_set
-
 module "azure-scale_set" {
   sourse = ""
 rg_name           = "my_default_rg"
