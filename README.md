@@ -1,5 +1,6 @@
+<<<<<<< HEAD
 module "azure-scale_set" {
-  sourse = "Rybitska/"
+  sourse = "Rybitska/azure-scale_set"
 rg_name           = "my_default_rg"
 rg_region         = "Central US"
 vnet_name         = "my_default_vnet"
@@ -17,3 +18,6 @@ Standard_LRS_name = "Standard_LRS"
 }
 
 Linux Scale Set should use minimum 1 instance ; Linux Scale Set will create its own Traffic Manager that is accessible from the internet
+=======
+
+>>>>>>> 02fb68fc4b4a692224d17d924c1b0991504eceff
