@@ -32,7 +32,7 @@ resource "azurerm_traffic_manager_profile" "traffic_manager" {
 
 resource "azurerm_traffic_manager_azure_endpoint" "terraform" {
   name                = "terraform-endpoint"
-  target_resource_id  = azurerm_linux_virtual_machine_scale_set.ss.id
+  target_resource_id  = azurerm_linux_virtual_machine_scale_set.ss.network_interface.id
   profile_id          = azurerm_traffic_manager_profile.traffic_manager.id
   weight              = 100
 }
