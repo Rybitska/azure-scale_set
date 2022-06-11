@@ -1,4 +1,4 @@
-
+/*
 resource "azurerm_traffic_manager_profile" "traffic_manager" {
   name = random_id.server.hex
   resource_group_name = azurerm_resource_group.terraform1.name
