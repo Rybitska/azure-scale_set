@@ -54,9 +54,10 @@ resource "azurerm_linux_virtual_machine_scale_set" "ss" {
     primary = true
 
     ip_configuration {
-      name      = var.subnet1_name
+      name      = "${var.ss_name}-nic"
       primary   = true
       subnet_id = azurerm_subnet.subnet1.id
+      private_ip_address_allocation = "Dynamic"
     }
   }
 }
