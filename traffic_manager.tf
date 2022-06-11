@@ -1,4 +1,4 @@
-/*
+
 resource "random_id" "server" {
   keepers = {
     azi_id = 1
@@ -28,6 +28,13 @@ resource "azurerm_traffic_manager_profile" "traffic_manager" {
     tolerated_number_of_failures = 3
   }
 
+}
+
+resource "azurerm_traffic_manager_azure_endpoint" "terraform" {
+  name                = "terraform-endpoint"
+  target_resource_id  = var.target_rs_id
+  profile_id          = azurerm_traffic_manager_profile.traffic_manager.id
+  weight              = 100
 }
 
 #resource "azurerm_traffic_manager_endpoint" "example" {

@@ -82,3 +82,11 @@ variable "Standard_LRS_name" {
   type        = string
   default     = "Standard_LRS"
 }
+
+//////////////////// Traffic Manager  ////////////////
+
+variable "target_rs_id" {
+  description = "Traffic manager azure endpoint target resource id"
+  type        = string
+  default     = ""
+}
