@@ -45,3 +45,4 @@ resource "azurerm_traffic_manager_azure_endpoint" "terraform" {
 #type                = "externalEndpoints"
 #weight              = 100
 #}
+*/
