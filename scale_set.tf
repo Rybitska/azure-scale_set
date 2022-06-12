@@ -82,7 +82,7 @@ resource "azurerm_network_security_group" "app_nsg" {
     source_address_prefix      = "*"
     destination_address_prefix = "*"
   }
-
+/*
   # We are creating a rule to allow traffic on port 22
   security_rule {
     name                       = "Allow_SSH"
@@ -96,7 +96,7 @@ resource "azurerm_network_security_group" "app_nsg" {
     destination_address_prefix = "*"
   }
 }
-
+*/
 resource "azurerm_subnet_network_security_group_association" "nsg_association" {
   subnet_id                 = azurerm_subnet.subnet1.id
   network_security_group_id = azurerm_network_security_group.app_nsg.id
