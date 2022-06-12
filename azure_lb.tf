@@ -44,6 +44,9 @@ resource "azurerm_lb_rule" "RuleA" {
   backend_port                   = 80
   frontend_ip_configuration_name = "frontend-ip"
   backend_address_pool_ids       = [azurerm_lb_backend_address_pool.scalesetpool.id]
+  depends_on = [
+    azurerm_lb.wp_LoadBalancer
+  ]
 }
 
 // Here we are defining the Health Probe
