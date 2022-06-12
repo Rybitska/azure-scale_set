@@ -13,8 +13,8 @@ resource "azurerm_lb" "wp_LoadBalancer" {
   name                = "TestLoadBalancer"
   location            = azurerm_resource_group.terraform1.location
   resource_group_name = azurerm_resource_group.terraform1.name
-  sku                 = "Standard"
-  sku_tier            = "Regional"
+  #sku                 = "Standard"
+  #sku_tier            = "Regional"
   frontend_ip_configuration {
     name                 = "PublicIPAddress"
     public_ip_address_id = azurerm_public_ip.PublicIPForLB.id
