@@ -16,3 +16,5 @@ resource "azurerm_lb" "example" {
     public_ip_address_id = azurerm_public_ip.example.id
   }
 }
+
+
