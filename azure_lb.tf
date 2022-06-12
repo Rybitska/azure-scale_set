@@ -42,7 +42,7 @@ resource "azurerm_lb_rule" "RuleA" {
   protocol                       = "Tcp"
   frontend_port                  = 80
   backend_port                   = 80
-  frontend_ip_configuration_name = "frontend-ip"
+  frontend_ip_configuration_name = "PublicIPAddress"
   backend_address_pool_ids       = [azurerm_lb_backend_address_pool.scalesetpool.id]
   depends_on = [
     azurerm_lb.wp_LoadBalancer
