@@ -54,13 +54,15 @@ resource "azurerm_linux_virtual_machine_scale_set" "ss" {
     primary = true
 
     ip_configuration {
-      name                          = "${var.ss_name}-nic"
-      primary                       = true
-      subnet_id                     = azurerm_subnet.subnet1.id
-     
+      name                                   = "${var.ss_name}-nic"
+      primary                                = true
+      subnet_id                              = azurerm_subnet.subnet1.id
+      load_balancer_backend_address_pool_ids = [azurerm_lb_backend_address_pool.scalesetpool.id]
     }
   }
-  
+  depends_on = [
+    azurerm_virtual_network.wp_LoadBalancer
+  ]
 }
 
 #need target group
@@ -84,20 +86,7 @@ resource "azurerm_network_security_group" "app_nsg" {
     source_address_prefix      = "*"
     destination_address_prefix = "*"
   }
-  /*
-  # We are creating a rule to allow traffic on port 22
-  security_rule {
-    name                       = "Allow_SSH"
-    priority                   = 200
-    direction                  = "Inbound"
-    access                     = "Allow"
-    protocol                   = "Tcp"
-    source_port_range          = "*"
-    destination_port_range     = "22"
-    source_address_prefix      = "*"
-    destination_address_prefix = "*"
-  }
-  */
+
 }
 
 resource "azurerm_subnet_network_security_group_association" "nsg_association" {
