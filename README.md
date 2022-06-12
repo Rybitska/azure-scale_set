@@ -64,5 +64,5 @@ terraform plan
 ```
 terraform apply
 ```
- 
+ :tada: :fireworks:
 
