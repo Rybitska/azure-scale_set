@@ -60,6 +60,12 @@ variable "admin_user_name" {
   default     = "adminuser"
 }
 
+variable "admin_password" {
+  description = "Admin user password"
+  type        = string
+  default     = "&*$867user34"
+}
+
 variable "canonical_name" {
   description = "canonical user name"
   type        = string

@@ -8,6 +8,7 @@ ss_name           = "mytestss-12346"
 vm_sku            = "Standard_D2s_v3"
 instance_number   = 1
 admin_user_name   = "adminuser"
+admin_password    = "&*$867user34"
 canonical_name    = "Canonical"
 UbuntuServer_name = "UbuntuServer"
 image_sku_name    = "18.04-LTS"
