@@ -48,7 +48,7 @@ resource "azurerm_linux_virtual_machine_scale_set" "ss" {
     storage_account_type = var.Standard_LRS_name
     caching              = "ReadWrite"
   }
-
+/*
   network_interface {
     name    = "example"
     primary = true
@@ -59,6 +59,19 @@ resource "azurerm_linux_virtual_machine_scale_set" "ss" {
       subnet_id                     = azurerm_subnet.subnet1.id
       //private_ip_address_allocation = "Dynamic"
     }
+  }
+  */
+}
+
+resource "azurerm_network_interface" "ss_nic_example" {
+  name                = "example-nic"
+  location            = azurerm_resource_group.terraform1.location
+  resource_group_name = azurerm_resource_group.terraform1.name
+
+  ip_configuration {
+    name                          = "internal"
+    subnet_id                     = azurerm_subnet.subnet1.id
+    private_ip_address_allocation = "Dynamic"
   }
 }
 #need target group
