@@ -51,7 +51,7 @@ resource "azurerm_subnet_network_security_group_association" "nsg_association" {
   ]
 }
 
-
+/*
 resource "azurerm_network_security_group" "db_nsg" {
   name                = "db-nsg"
   location            = azurerm_resource_group.terraform1.location
@@ -90,3 +90,4 @@ resource "azurerm_subnet_network_security_group_association" "db_nsg_association
     azurerm_network_security_group.app_nsg
   ]
 }
+*/
