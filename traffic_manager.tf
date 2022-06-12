@@ -1,4 +1,4 @@
-
+/*
 resource "random_id" "server" {
   keepers = {
     azi_id = 1
@@ -28,7 +28,7 @@ resource "azurerm_traffic_manager_profile" "traffic_manager" {
   }
 
 }
-/*
+
 resource "azurerm_traffic_manager_azure_endpoint" "terraform" {
   name                = "terraform-endpoint"
   target_resource_id  = azurerm_linux_virtual_machine_scale_set.ss.network_interface[0].id
