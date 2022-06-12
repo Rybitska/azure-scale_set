@@ -30,13 +30,14 @@ resource "azurerm_linux_virtual_machine_scale_set" "ss" {
   sku                 = var.vm_sku
   instances           = var.instance_number
   admin_username      = var.admin_user_name
+  disable_password_authentication = false
 
-
+/*
   admin_ssh_key {
     username   = var.admin_user_name
     public_key = file("~/.ssh/id_rsa.pub")
   }
-
+*/
   source_image_reference {
     publisher = var.canonical_name
     offer     = var.UbuntuServer_name
