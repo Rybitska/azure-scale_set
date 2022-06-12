@@ -12,4 +12,4 @@ canonical_name    = "Canonical"
 UbuntuServer_name = "UbuntuServer"
 image_sku_name    = "18.04-LTS"
 Standard_LRS_name = "Standard_LRS"
-target_rs_id    = ""    # Scale set id
+target_rs_id      = "" # Scale set id

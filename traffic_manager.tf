@@ -9,31 +9,31 @@ resource "random_id" "server" {
 
 
 resource "azurerm_traffic_manager_profile" "traffic_manager" {
-  name = random_id.server.hex
-  resource_group_name = azurerm_resource_group.terraform1.name
+  name                   = random_id.server.hex
+  resource_group_name    = azurerm_resource_group.terraform1.name
   traffic_routing_method = "Weighted"
 
   dns_config {
     relative_name = random_id.server.hex
-    ttl = 100
+    ttl           = 100
   }
 
   monitor_config {
-    protocol = "HTTP"
-    port = 80
-    path = "/"
-    interval_in_seconds = 30
-    timeout_in_seconds = 9
+    protocol                     = "HTTP"
+    port                         = 80
+    path                         = "/"
+    interval_in_seconds          = 30
+    timeout_in_seconds           = 9
     tolerated_number_of_failures = 3
   }
 
 }
 
 resource "azurerm_traffic_manager_azure_endpoint" "terraform" {
-  name                = "terraform-endpoint"
-  target_resource_id  = azurerm_linux_virtual_machine_scale_set.ss.id
-  profile_id          = azurerm_traffic_manager_profile.traffic_manager.id
-  weight              = 100
+  name               = "terraform-endpoint"
+  target_resource_id = azurerm_linux_virtual_machine_scale_set.ss.id
+  profile_id         = azurerm_traffic_manager_profile.traffic_manager.id
+  weight             = 100
 }
 
 #resource "azurerm_traffic_manager_endpoint" "example" {
@@ -44,4 +44,4 @@ resource "azurerm_traffic_manager_azure_endpoint" "terraform" {
 #type                = "externalEndpoints"
 #weight              = 100
 #}
-*/
+

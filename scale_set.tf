@@ -54,9 +54,9 @@ resource "azurerm_linux_virtual_machine_scale_set" "ss" {
     primary = true
 
     ip_configuration {
-      name      = "${var.ss_name}-nic"
-      primary   = true
-      subnet_id = azurerm_subnet.subnet1.id
+      name                          = "${var.ss_name}-nic"
+      primary                       = true
+      subnet_id                     = azurerm_subnet.subnet1.id
       private_ip_address_allocation = "Dynamic"
     }
   }
@@ -70,7 +70,7 @@ resource "azurerm_network_security_group" "app_nsg" {
   location            = azurerm_resource_group.terraform1.location
   resource_group_name = azurerm_resource_group.terraform1.name
 
-# We are creating a rule to allow traffic on port 80
+  # We are creating a rule to allow traffic on port 80
   security_rule {
     name                       = "Allow_HTTP"
     priority                   = 200
@@ -82,7 +82,7 @@ resource "azurerm_network_security_group" "app_nsg" {
     source_address_prefix      = "*"
     destination_address_prefix = "*"
   }
-/*
+  /*
   # We are creating a rule to allow traffic on port 22
   security_rule {
     name                       = "Allow_SSH"
