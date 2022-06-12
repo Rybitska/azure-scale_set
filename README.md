@@ -34,3 +34,35 @@ Using Traffic View, you can:
 In the next step, Traffic Manager correlates the user base region to Azure region mapping with the network intelligence latency tables. This table is maintained for different end-user networks to understand the average latency experienced by users from those regions when connecting to Azure regions. All these calculations are then combined at a per local DNS resolver IP level before it's presented to you. You can consume the information in various ways.
 
 The frequency of Traffic view data update depends on multiple internal service variables. However, the data is updated once every 48 hours.
+
+```
+module "azure-scale_set" {
+    source = ""
+rg_name           = "my_default_rg"
+rg_region         = "Central US"
+vnet_name         = "my_default_vnet"
+vnet_ip           = ["10.0.0.0/16"]
+subnet1_name      = "my_subnet1"
+subnet1_ip        = ["10.0.1.0/24"]
+ss_name           = "myss01-12346"
+vm_sku            = "Standard_D2s_v3"
+instance_number   = 1
+admin_user_name   = "adminuser"
+canonical_name    = "Canonical"
+UbuntuServer_name = "UbuntuServer"
+image_sku_name    = "18.04-LTS"
+Standard_LRS_name = "Standard_LRS"
+}
+```
+## Execute following commands
+```
+terraform init
+```
+```
+terraform plan
+```
+```
+terraform apply
+```
+ 
+
