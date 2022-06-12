@@ -60,9 +60,9 @@ resource "azurerm_linux_virtual_machine_scale_set" "ss" {
       load_balancer_backend_address_pool_ids = [azurerm_lb_backend_address_pool.scalesetpool.id]
     }
   }
-  depends_on = [
-    azurerm_virtual_network.wp_LoadBalancer
-  ]
+ # depends_on = [
+ #   azurerm_virtual_network.wp_LoadBalancer
+ # ]
 }
 
 #need target group

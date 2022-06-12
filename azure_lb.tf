@@ -36,7 +36,7 @@ resource "azurerm_lb_backend_address_pool" "scalesetpool" {
 
 // Here we are defining the Load Balancing Rule
 resource "azurerm_lb_rule" "RuleA" {
-  resource_group_name            = azurerm_resource_group.terraform1.name
+ # resource_group_name            = azurerm_resource_group.terraform1.name
   loadbalancer_id                = azurerm_lb.wp_LoadBalancer.id
   name                           = "RuleA"
   protocol                       = "Tcp"
@@ -48,7 +48,7 @@ resource "azurerm_lb_rule" "RuleA" {
 
 // Here we are defining the Health Probe
 resource "azurerm_lb_probe" "ProbeA" {
-  resource_group_name = azurerm_resource_group.terraform1.name
+ # resource_group_name = azurerm_resource_group
   loadbalancer_id     = azurerm_lb.wp_LoadBalancer.id
   name                = "probeA"
   port                = 80
