@@ -23,6 +23,7 @@ Load balancing refers to evenly incoming network traffic across a group of backe
 TCP port 22 is used for secure remote login by connecting an SSH client application with an SSH server. This rule resolution is part of the Conformity Security & Compliance tool for Azure.
 
 After you've created a VM that's configured to serve web requests on the standard TCP port 80, you can: Create a network security group. Create an inbound security rule allowing traffic and assign values to the following settings: Destination port ranges: 80.
+ 
 #          
    
 
