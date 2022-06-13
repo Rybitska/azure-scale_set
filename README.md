@@ -17,23 +17,14 @@ Enable monitoring for your virtual machine scale set application with Applicatio
 
 
 
-# Traffic Manager 
-   Traffic Manager provides you with DNS (Domain Name System) level routing. This service allows your end users to get directed to healthy endpoints based on the routing method of your choosing.
+# Load Balancer
+Load balancing refers to evenly incoming network traffic across a group of backend resources or servers.
 
-Using Traffic View, you can:
-  1. Understand where your user bases are located (up to a local DNS resolver level granularity).
-  2. View the volume of traffic (observed as DNS queries handled by Azure Traffic Manager) originating from these regions.
-  3. Get insights into what is the representative latency experienced by these users.
-  4. Deep dive into the specific traffic patterns from each of these user bases to Azure regions where you have endpoints.
+TCP port 22 is used for secure remote login by connecting an SSH client application with an SSH server. This rule resolution is part of the Conformity Security & Compliance tool for Azure.
 
-
-
-# How Traffic View works          
-   Traffic View works by look at the incoming queries received over the last seven days for a profile. From the incoming queries information, Traffic View extracts the source IP of the DNS resolver used to represent the location of the users. This information gets grouped together at a DNS resolver level to create user-base regions. Traffic Manager maintains the geographic information of IP addresses. Traffic Manager then looks at the Azure regions to which the query gets routed and constructs a traffic flow map for users from those regions.
-
-In the next step, Traffic Manager correlates the user base region to Azure region mapping with the network intelligence latency tables. This table is maintained for different end-user networks to understand the average latency experienced by users from those regions when connecting to Azure regions. All these calculations are then combined at a per local DNS resolver IP level before it's presented to you. You can consume the information in various ways.
-
-The frequency of Traffic view data update depends on multiple internal service variables. However, the data is updated once every 48 hours.
+After you've created a VM that's configured to serve web requests on the standard TCP port 80, you can: Create a network security group. Create an inbound security rule allowing traffic and assign values to the following settings: Destination port ranges: 80.
+#          
+   
 
 ```
 module "azure-scale_set" {
