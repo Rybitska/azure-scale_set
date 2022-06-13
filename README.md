@@ -16,7 +16,6 @@ Use Azure Monitor for VMs, which has a simple onboarding process and will automa
 Enable monitoring for your virtual machine scale set application with Application Insights to collect detailed information about your application including page views, application requests, and exceptions. Further verify the availability of your application by configuring an availability test to simulate user traffic.
 
 
-
 # Load Balancer
 Load balancing refers to evenly incoming network traffic across a group of backend resources or servers.
 
