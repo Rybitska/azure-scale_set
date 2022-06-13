@@ -1,5 +1,5 @@
 # Linux Scale Set should use minimum 1 instance.
-# Linux Scale Set will create its own Traffic Manager that is accessible from the internet
+# Linux Scale Set will create its own Load Balancer that is accessible from the internet
 
 
 Azure virtual machine scale sets provide the management capabilities for applications that run across many VMs, automatic scaling of resources, and load balancing of traffic. Scale sets provide the following key benefits:
