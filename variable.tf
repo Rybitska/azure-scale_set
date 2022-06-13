@@ -40,6 +40,11 @@ variable "ss_name" {
   default     = "my_ss01"
 }
 
+variable "subnet3_id" {
+  description = "ss name"
+  type        = string
+  default     = "my_ss01"
+}
 
 
 variable "vm_sku" {
